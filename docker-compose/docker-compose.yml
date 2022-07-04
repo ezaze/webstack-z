@@ -5,8 +5,8 @@ services:
     restart: always
     container_name: "mysql_wsl"
     volumes:
-      - /root/webstack-pc/mysql/data:/var/lib/mysql:rw
-      - /root/webstack-pc/mysql/config/my.cnf:/etc/my.cnf:rw
+      - ../mysql/data:/var/lib/mysql:rw
+      - ../mysql/config/my.cnf:/etc/my.cnf:rw
     environment:
       TZ: Asia/Shanghai
       MYSQL_ROOT_PASSWORD: Tym8zzrnNRpz4
@@ -30,7 +30,7 @@ services:
     image: arvon2014/webstack-laravel:v1.2.2
     container_name: "wsl"
     volumes:
-      - /root/webstack-pc/website:/opt/navi:rw
+      - ../website:/opt/navi:rw
     ports:
       - 8000:8000
     depends_on:
